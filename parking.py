@@ -2,6 +2,13 @@ import pandas as pd
 import time
 import os
 
+#Kada se program pokrene prvi put, kreirace bazu i istom folderu gde se nalazi skripta i kreirace index counter. Index counter sluzi da se nastavi odabir ljudi za svaki dan. 
+#Baza ima spisak imena ljudi koji koriste garazu
+#pored imena kolona "+" sluzi da se oznace ljudi koji se parkiraju na placeno mesto
+#kolona odmor sluzi da se oznaci ako neko nije tu taj dan, u nju se moze upisati bilo sta i na taj nacin ce ta osoba bitiizbacena iz rotacije dokle god je polje popunjeno. da se osoba vrati u rotaciju, smo je potrebno obrisati sve iz tog polja
+#da se doda novi korisnik, samo je potrebno u bazu upisati ime korisnika i staviti plus ukoliko moze da koristi i placeno mesto
+#ukoliko nema korisnika koji placaju mesto tog dana, na njivo placeno mesto uci ce neko ko neplaca, da bi uvek bila sva mesta popunjena
+
 # Define the Excel file path
 file_path = "C:\\Users\\nikolav\\Desktop\\richyPy\\parking\\parking_rotation.xlsx"
 index_file_path = "C:\\Users\\nikolav\\Desktop\\richyPy\\parking\\rotation_index.txt"
